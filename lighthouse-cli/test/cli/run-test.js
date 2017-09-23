@@ -73,15 +73,15 @@ describe('Parsing --chrome-flags', () => {
     );
 
     assert.deepStrictEqual(
-      parseChromeFlags('--host-resolver-rules="MAP www.example.org:443 127.0.0.1:8443"'),
-      ['--host-resolver-rules="MAP www.example.org:443 127.0.0.1:8443"']
+        parseChromeFlags('--host-resolver-rules="MAP www.example.org:443 127.0.0.1:8443"'),
+        ['--host-resolver-rules="MAP www.example.org:443 127.0.0.1:8443"']
     );
   });
 
   it('returns all flags as provided', () => {
     assert.deepStrictEqual(
-      parseChromeFlags('--spaces="1 2 3 4" --debug=false --verbose --more-spaces="9 9 9"'),
-      ['--spaces="1 2 3 4"', '--debug="false"', '--verbose', '--more-spaces="9 9 9"']
+        parseChromeFlags('--spaces="1 2 3 4" --debug=false --verbose --more-spaces="9 9 9"'),
+        ['--spaces="1 2 3 4"', '--debug="false"', '--verbose', '--more-spaces="9 9 9"']
     );
   });
 });

@@ -96,10 +96,10 @@ class PredictivePerf extends Audit {
    */
   static getLastLongTaskEndTime(nodeTiming) {
     return Array.from(nodeTiming.entries())
-        .filter(([node, timing]) => node.type === Node.TYPES.CPU &&
-            timing.endTime - timing.startTime > 50)
-        .map(([_, timing]) => timing.endTime)
-        .reduce((max, x) => Math.max(max, x), 0);
+      .filter(([node, timing]) => node.type === Node.TYPES.CPU &&
+          timing.endTime - timing.startTime > 50)
+      .map(([_, timing]) => timing.endTime)
+      .reduce((max, x) => Math.max(max, x), 0);
   }
 
   /**
@@ -144,9 +144,9 @@ class PredictivePerf extends Audit {
 
       const meanDuration = sum / Object.keys(values).length;
       const score = Audit.computeLogNormalScore(
-        meanDuration,
-        SCORING_POINT_OF_DIMINISHING_RETURNS,
-        SCORING_MEDIAN
+          meanDuration,
+          SCORING_POINT_OF_DIMINISHING_RETURNS,
+          SCORING_MEDIAN
       );
 
       return {

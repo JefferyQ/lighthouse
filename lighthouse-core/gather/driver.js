@@ -225,8 +225,8 @@ class Driver {
     return new Promise((resolve, reject) => {
       // If this gets to 60s and it hasn't been resolved, reject the Promise.
       const asyncTimeout = setTimeout(
-        (_ => reject(new Error('The asynchronous expression exceeded the allotted time of 60s'))),
-        60000
+          (_ => reject(new Error('The asynchronous expression exceeded the allotted time of 60s'))),
+          60000
       );
 
       this.sendCommand('Runtime.evaluate', {
@@ -649,16 +649,16 @@ class Driver {
         generatePreview: false,
         ownProperties: false,
       })
-      .then(properties => {
-        const propertyForName = properties.result
-          .find(property => property.name === propName);
+        .then(properties => {
+          const propertyForName = properties.result
+            .find(property => property.name === propName);
 
-        if (propertyForName && propertyForName.value) {
-          resolve(propertyForName.value.value);
-        } else {
-          resolve(null);
-        }
-      }).catch(reject);
+          if (propertyForName && propertyForName.value) {
+            resolve(propertyForName.value.value);
+          } else {
+            resolve(null);
+          }
+        }).catch(reject);
     });
   }
 
@@ -754,7 +754,7 @@ class Driver {
     const tracingOpts = {
       categories: _uniq(traceCategories).join(','),
       transferMode: 'ReturnAsStream',
-      options: 'sampling-frequency=10000',  // 1000 is default and too slow.
+      options: 'sampling-frequency=10000', // 1000 is default and too slow.
     };
 
     // Check any domains that could interfere with or add overhead to the trace.
@@ -792,7 +792,7 @@ class Driver {
       // When the tracing has ended this will fire with a stream handle.
       this.once('Tracing.tracingComplete', streamHandle => {
         this._readTraceFromStream(streamHandle)
-            .then(traceContents => resolve(traceContents), reject);
+          .then(traceContents => resolve(traceContents), reject);
       });
 
       // Issue the command to stop tracing.
@@ -886,7 +886,7 @@ class Driver {
    */
   goOnline(options) {
     return this.setThrottling(options.flags, options.config)
-        .then(_ => this.online = true);
+      .then(_ => this.online = true);
   }
 
   cleanBrowserCaches() {

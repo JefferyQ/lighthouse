@@ -138,8 +138,8 @@ class Node {
       rootNode.traverse(node => {
         if (predicate(node)) {
           node.traverse(
-            node => idsToInclude.add(node.id),
-            node => node._dependencies.filter(parent => !idsToInclude.has(parent))
+              node => idsToInclude.add(node.id),
+              node => node._dependencies.filter(parent => !idsToInclude.has(parent))
           );
         }
       });
