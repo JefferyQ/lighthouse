@@ -264,8 +264,8 @@ class Estimator {
         ? this._layoutTaskMultiplier
         : this._cpuTaskMultiplier;
       const totalDuration = Math.min(
-        Math.round(node.event.dur / 1000 * multiplier),
-        DEFAULT_MAXIMUM_CPU_TASK_DURATION
+          Math.round(node.event.dur / 1000 * multiplier),
+          DEFAULT_MAXIMUM_CPU_TASK_DURATION
       );
       const estimatedTimeElapsed = totalDuration - timingData.timeElapsed;
       this._setTimingData(node, {estimatedTimeElapsed});

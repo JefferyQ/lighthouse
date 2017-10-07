@@ -68,8 +68,8 @@ describe('Parsing --chrome-flags', () => {
 
   it('quotes flag values with spaces in them (#2817)', () => {
     assert.deepStrictEqual(
-      parseChromeFlags('--user-agent="iPhone UA Test"'),
-      ['--user-agent="iPhone UA Test"']
+        parseChromeFlags('--user-agent="iPhone UA Test"'),
+        ['--user-agent="iPhone UA Test"']
     );
 
     assert.deepStrictEqual(

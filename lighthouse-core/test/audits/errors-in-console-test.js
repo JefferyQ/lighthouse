@@ -65,12 +65,12 @@ describe('Console error logs audit', () => {
     assert.equal(auditResult.details.items[0][0].text, 'http://www.example.com/favicon.ico');
     assert.equal(auditResult.details.items[0][1].type, 'text');
     assert.equal(auditResult.details.items[0][1].text,
-      'The server responded with a status of 404 (Not Found)');
+        'The server responded with a status of 404 (Not Found)');
     assert.equal(auditResult.details.items[1][0].type, 'url');
     assert.equal(auditResult.details.items[1][0].text, 'http://www.example.com/wsconnect.ws');
     assert.equal(auditResult.details.items[1][1].type, 'text');
     assert.equal(auditResult.details.items[1][1].text,
-      'WebSocket connection failed: Unexpected response code: 500');
+        'WebSocket connection failed: Unexpected response code: 500');
   });
 
   it('handle the case when some logs fields are undefined', () => {

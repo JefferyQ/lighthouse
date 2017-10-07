@@ -17,7 +17,6 @@ const semver = require('semver');
 const snykDatabase = require('../../../third-party/snyk/snapshot.json');
 
 class NoVulnerableLibrariesAudit extends Audit {
-
   /**
    * @return {!AuditMeta}
    */
@@ -116,8 +115,7 @@ class NoVulnerableLibrariesAudit extends Audit {
         lib.detectedLib.type = 'link';
       }
       return lib;
-    })
-    .filter(obj => {
+    }).filter(obj => {
       return obj.vulns.length > 0;
     });
 
@@ -145,7 +143,6 @@ class NoVulnerableLibrariesAudit extends Audit {
       details,
     };
   }
-
 }
 
 module.exports = NoVulnerableLibrariesAudit;

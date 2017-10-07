@@ -16,7 +16,7 @@
 const Gatherer = require('../gatherer');
 const fs = require('fs');
 const libDetectorSource = fs.readFileSync(
-  require.resolve('js-library-detector/library/libraries.js'), 'utf8');
+    require.resolve('js-library-detector/library/libraries.js'), 'utf8');
 
 /**
  * Obtains a list of detected JS libraries and their versions.
